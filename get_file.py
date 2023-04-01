@@ -1,11 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.firefox.options import Options
+
 import os
 import requests
 from time import sleep
 import telebot as tb
 
-
+options = Options()
+options.headless = True
 
 driver = webdriver.Firefox(executable_path='geckodriver')
 driver.get("https://ttsfree.com/text-to-speech")
