@@ -8,18 +8,22 @@ import requests
 from time import sleep
 import telebot as tb
 
+TOKEN = os.environ.get('TOKEN')
+bot = tb.TeleBot(TOKEN)
+
+
 opts = FirefoxOptions()
-
 opts.add_argument("--headless")
-
+bot.send_message(741069625, "Loading driver")
 driver = webdriver.Firefox(executable_path='geckodriver', options=opts)
+bot.send_message(741069625, "Installing addon")
 driver.install_addon("./adblock_plus-3.16.2.xpi")
+sleep(5)
+bot.send_message(741069625, "Loading page")
 driver.get("https://ttsfree.com/text-to-speech")
 
 
-TOKEN = os.environ.get('TOKEN')
 
-bot = tb.TeleBot(TOKEN)
 
 bot.send_message(741069625, "Bot online.")
 
