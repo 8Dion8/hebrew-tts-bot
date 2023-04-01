@@ -22,7 +22,7 @@ sleep(5)
 bot.send_message(741069625, "Loading page")
 driver.get("https://ttsfree.com/text-to-speech")
 
-elem = driver.find_element("xpath", "//[@class='qc-cmp-cleanslate css-cgzk6p']")
+elem = driver.find_element("xpath", "//div[@class='qc-cmp-cleanslate css-cgzk6p']")
 driver.execute_script("arguments[0].style.visibility='hidden'", elem)
 
 
