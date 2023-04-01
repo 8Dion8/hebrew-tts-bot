@@ -9,6 +9,7 @@ import telebot as tb
 
 opts = FirefoxOptions()
 opts.add_argument("--headless")
+opts.add_argument("--window-size=2560,1440")
 
 driver = webdriver.Firefox(executable_path='geckodriver', options=opts)
 driver.get("https://ttsfree.com/text-to-speech")
