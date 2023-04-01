@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver import FirefoxOptions
+from selenium.webdriver import FirefoxProfile
 
 import os
 import requests
@@ -8,10 +9,11 @@ from time import sleep
 import telebot as tb
 
 opts = FirefoxOptions()
+
 opts.add_argument("--headless")
-opts.add_argument("--window-size=2560,1440")
 
 driver = webdriver.Firefox(executable_path='geckodriver', options=opts)
+driver.install_addon("./adblock_plus-3.16.2.xpi")
 driver.get("https://ttsfree.com/text-to-speech")
 
 
