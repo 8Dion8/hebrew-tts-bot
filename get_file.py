@@ -12,7 +12,7 @@ TOKEN = os.environ.get('TOKEN')
 bot = tb.TeleBot(TOKEN)
 
 opts = FirefoxOptions()
-#opts.add_argument("--headless")
+opts.add_argument("--headless")
 bot.send_message(741069625, "Loading driver")
 driver = webdriver.Firefox(executable_path='geckodriver', options=opts)
 bot.send_message(741069625, "Installing addon")
